@@ -53,7 +53,7 @@ openssl ecparam -name prime256v1 -genkey -out server.key
 
 ```bash
 openssl req -new -key server.key -out server.csr \
--subj "/C=IN/ST=TN/O=FAVEO/CN=aman.localhost"
+-subj "/C=IN/ST=TN/O=FAVEO/CN=faveo.localhost"
 ```
 
 ---
@@ -68,7 +68,7 @@ keyUsage = digitalSignature, keyEncipherment
 extendedKeyUsage = serverAuth
 
 [alt_names]
-DNS.1 = aman.localhost
+DNS.1 = faveo.localhost
 IP.1 = 127.0.0.1
 EOF
 ```
@@ -165,7 +165,7 @@ OK
 ### Test PHP HTTPS:
 
 ```bash
-php -r "echo file_get_contents('https://aman.localhost');"
+php -r "echo file_get_contents('https://faveo.localhost');"
 ```
 
 ✔ No error = DONE
